@@ -1,3 +1,5 @@
+" .vimrc based on - Learn Vimscript the Hard Way by Steve Losh
+" @author: German R. Gomez Urbina
 " Set number lines
 :set number numberwidth=5
 "  Enable text wrap-around
