@@ -50,6 +50,24 @@
 :iabbrev @@ grgomezu@gmail.com
 
 " Auto-commands
-:autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
-:autocmd BufNewFile, BufRead *.csc nnoremap <buffer> <localleader>c I#<esc>
+:augroup ft_csc
+	:autocmd!
+	:autocmd BufNewFile, BufRead *.csc nnoremap <buffer> <localleader>c I#<esc>
+:augroup END
 
+:augroup ft_python
+	:autocmd!
+	:autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
+	:autocmd FileType python :iabbrev <buffer> iff if:<left>
+:augroup END
+
+:augroup ft_c
+	:autocmd!
+	:autocmd FileType c :iabbrev <buffer> iff if ()<left>
+	:autocmd FileType c :iabbrev <buffer> ret return; <left>
+:augroup END
+
+:augroup filetype_html
+	:autocmd!
+	:autocmd FileType html nnoremap <buffer> <localleader>f Vatzf
+:augroup END
